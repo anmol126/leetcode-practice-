@@ -1,0 +1,14 @@
+let J = "aA";
+let S = "aAAbbbb";
+ 
+let arr = [];
+ 
+for(let i=0; i<J.length; i++)
+ arr[J[i]] = J[i];
+ 
+ let count=0;
+ 
+ for(let i=0; i<S.length; i++) {
+ 	if(arr[S[i]])
+     count++;	 
+ }
