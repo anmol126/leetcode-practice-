@@ -1,0 +1,23 @@
+var judgeCircle = function(moves) {
+    
+   let arr = [];
+  
+    arr['L'] = 0; arr['R'] = 0; arr['U'] = 0; arr['D'] = 0;
+    
+    let count=0;
+    
+    for(let i=0; i<moves.length; i++) {
+        if(moves[i]=='U' || moves[i]=='R') {
+          count++;	
+        }
+        else
+          count--;
+    }
+    
+    return count==0;
+    
+    
+    
+    
+    
+};
