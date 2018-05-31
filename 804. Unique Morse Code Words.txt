@@ -1,0 +1,34 @@
+/**
+ * @param {string[]} words
+ * @return {number}
+ */
+var uniqueMorseRepresentations = function(words) {
+    
+    let arr = [];
+arr['a'] = ".-"; arr['b'] = "-..."; arr['c'] = "-.-."; arr['d'] = "-.."; arr['e'] = "."; arr['f'] = "..-."; 
+arr['g'] = "--."; arr['h'] = "...."; arr['i'] = ".."; arr['j'] = ".---"; arr['k'] = "-.-"; arr['l'] = ".-..";
+arr['m'] = "--"; arr['n'] = "-."; arr['o'] = "---"; arr['p'] = ".--."; arr['q'] = "--.-"; arr['r'] = ".-."; 
+arr['s'] = "..."; arr['t'] = "-"; arr['u'] = "..-"; arr['v'] = "...-"; arr['w'] = ".--"; arr['x'] = "-..-";
+arr['y'] = "-.--"; arr['z'] = "--..";
+    
+    let count=0;
+    let pushArr = [];
+    
+    words.forEach(function(word) {
+        
+         let concatStr = "";
+         
+        
+         for(let i=0; i<word.length; i++) {
+             concatStr += arr[word[i]];
+         }
+         
+         if(!pushArr[concatStr]) {
+             count++;
+             pushArr[concatStr] = concatStr;
+         }
+        
+    });
+    
+    return count;
+};
