@@ -1,0 +1,25 @@
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var findMaxConsecutiveOnes = function(nums) {
+    
+    // your code goes here
+
+let count = 0;
+let maxCountSoFar = 0;
+
+ for(let i=0; i<nums.length; i++) {
+     if(nums[i]==1){
+     	maxCountSoFar++;
+     	if(maxCountSoFar>count)
+     	  count = maxCountSoFar;
+     }
+     else {
+        maxCountSoFar=0;	  
+     }
+ }
+ 
+ return count;
+    
+}    
