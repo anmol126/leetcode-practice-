@@ -1,0 +1,22 @@
+/**
+ * @param {string} s
+ * @return {string}
+ */
+var reverseWords = function(s) {
+    
+    let arr = s.split(' ');
+    let newArr = [];
+    
+    arr.forEach(function(word) {
+          wordings = word.split('');
+        
+          for(let i=0,j=wordings.length-1; i<j; i++,j--) {
+              let temp = wordings[i];
+              wordings[i] = wordings[j];
+              wordings[j] = temp;
+          }
+           newArr.push(wordings.join(''));
+    });
+    
+    return newArr.join(' ');
+};
