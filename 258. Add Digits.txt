@@ -1,0 +1,26 @@
+/**
+ * @param {number} num
+ * @return {number}
+ */
+var addDigits = function(num) {
+    
+    // your code goes here
+
+let sum=0;
+    
+    if(num<10)
+        return num;
+    else {
+ while(num>=10) {
+    num = num.toString().split('');
+    
+     sum=0;
+    
+    
+    for(let i=0; i<num.length;i++)
+     sum+=Number(num[i]);
+     num = sum;
+}
+    return sum;
+}  
+}
