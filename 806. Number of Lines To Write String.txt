@@ -1,0 +1,34 @@
+/**
+ * @param {number[]} widths
+ * @param {string} S
+ * @return {number[]}
+ */
+var numberOfLines = function(widths, S) {
+    
+    var map=[];
+    
+    map['a'] = widths[0]; map['b'] = widths[1]; map['c'] = widths[2]; map['d'] = widths[3];
+map['e'] = widths[4]; map['f'] = widths[5]; map['g'] = widths[6]; map['h'] = widths[7];
+map['i'] = widths[8]; map['j'] = widths[9]; map['k'] = widths[10]; map['l'] = widths[11];
+map['m'] = widths[12]; map['n'] = widths[13]; map['o'] = widths[14]; map['p'] = widths[15];
+map['q'] = widths[16]; map['r'] = widths[17]; map['s'] = widths[18]; map['t'] = widths[19];
+map['u'] = widths[20]; map['v'] = widths[21]; map['w'] = widths[22]; map['x'] = widths[23];
+map['y'] = widths[24]; map['z'] = widths[25];
+    
+    let sum=0;
+    let lines = 1;
+    
+    for(let i=0; i<S.length; i++) {
+        
+        if(sum+map[S[i]]<=100) {
+            sum+=map[S[i]];
+        }
+        else {
+            i--;
+            sum=0;
+            lines++;
+        }
+    }
+    
+    return [lines, sum];
+};
