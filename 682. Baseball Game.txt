@@ -1,0 +1,48 @@
+/**
+ * @param {string[]} ops
+ * @return {number}
+ */
+var calPoints = function(ops) {
+    
+    // your code goes here
+
+let sum=0;
+let pointArr = [];
+
+for(let i=0; i<ops.length; i++) {
+    
+    switch(ops[i]) {
+    
+       case "C":
+       	
+       	sum -= pointArr.pop();
+       	break;
+       	
+       case "D":
+       
+            
+            sum += 2*pointArr[pointArr.length-1];
+            pointArr.push(2*pointArr[pointArr.length-1]);
+            break;
+            
+       case "+":
+       	
+       	
+       	pointArr.push(pointArr[pointArr.length-1]+pointArr[pointArr.length-2]);
+       	sum+= pointArr[pointArr.length-1];
+       	break;
+       	
+       default:
+       
+            sum+=Number(ops[i]);
+            pointArr.push(Number(ops[i]));
+            break;
+    
+    }   	
+       	
+}
+
+return sum;
+
+    
+};
