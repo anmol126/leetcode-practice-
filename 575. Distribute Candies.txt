@@ -1,0 +1,19 @@
+/**
+ * @param {number[]} candies
+ * @return {number}
+ */
+var distributeCandies = function(candies) {
+    
+    let pushArr = [];
+    
+    candies.forEach(function(eachCandy) {
+        if(!(pushArr.indexOf(eachCandy)>-1))
+            pushArr.push(eachCandy);
+    })
+    
+    if(pushArr.length>=candies.length/2)
+        return candies.length/2;
+    else
+        return pushArr.length;
+    
+};
