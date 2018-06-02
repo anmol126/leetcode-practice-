@@ -1,0 +1,64 @@
+/**
+ * @param {string[]} words
+ * @return {string[]}
+ */
+var findWords = function(words) {
+    // your code goes here
+
+let pushArr = [];
+
+let firstMap=[];
+let secondMap = [];
+let thirdMap = [];
+
+firstMap['q'] = 1; firstMap['w'] = 1; firstMap['e'] = 1; firstMap['r'] = 1;firstMap['t'] = 1; 
+firstMap['y'] = 1; firstMap['u'] = 1; firstMap['i'] = 1; firstMap['o'] = 1; firstMap['p'] = 1;
+
+secondMap['a'] = 1; secondMap['s'] = 1; secondMap['d'] = 1; secondMap['f'] = 1; secondMap['g'] = 1; 
+secondMap['h'] = 1; secondMap['j'] = 1; secondMap['k'] = 1; secondMap['l'] = 1; 
+
+thirdMap['z'] = 1; thirdMap['x'] = 1; thirdMap['c'] = 1; thirdMap['v'] = 1; thirdMap['b'] = 1;
+thirdMap['n'] = 1; thirdMap['m'] = 1;
+
+words.forEach(function(eachElem) {
+	
+     var flag = true;
+     
+     if(firstMap[eachElem[0].toLowerCase()]) {
+         for(let i=1; i<eachElem.length; i++) {
+         	if(firstMap[eachElem[i].toLowerCase()]!=1) {
+         		
+         	flag = false;
+         	break;
+           }
+         }     
+         
+         if(flag==true)
+         pushArr.push(eachElem);
+     }
+     else if(secondMap[eachElem[0].toLowerCase()]) {
+     	
+         for(let i=1; i<eachElem.length; i++) {
+     	if(secondMap[eachElem[i].toLowerCase()]!=1) {
+         	flag = false;
+         	break;
+      } }
+            
+            if(flag==true)
+     pushArr.push(eachElem);
+     }
+     else {
+         for(let i=1; i<eachElem.length; i++) {
+           if(thirdMap[eachElem[i].toLowerCase()]!=1) {
+         	flag = false;
+         	break;
+     }}
+     
+     if(flag==true)
+     pushArr.push(eachElem);
+  }
+
+});	
+
+return pushArr;
+};
