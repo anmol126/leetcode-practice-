@@ -1,0 +1,53 @@
+/**
+ * @param {string} S
+ * @param {string} T
+ * @return {boolean}
+ */
+var backspaceCompare = function(S, T) {
+    
+let pushArrS = [];
+let pushArrT = [];
+
+for(let i=0; i<S.length; i++) {
+    if(S[i]==='#')
+    {
+       if(pushArrS.length>0)
+         pushArrS.pop();
+    }
+    else
+        pushArrS.push(S[i]);
+}
+
+for(let i=0; i<T.length; i++) {
+    if(T[i]==='#')
+    {
+       if(pushArrT.length>0)
+         pushArrT.pop();
+    }
+    else
+        pushArrT.push(T[i]);
+}
+
+
+if(pushArrS.length===0 && pushArrT.length===0)
+  return true;
+else if(pushArrS.length !== pushArrT.length)
+  return false;
+else {
+   let flag=true;
+   
+   for(let i=0; i<pushArrS.length; i++) {
+      if(pushArrS[i]!==pushArrT[i])
+      {
+         flag=false;
+         break;
+      }  
+   }	
+   
+   if(flag===true)
+      return true;
+   else
+      return false;
+} 
+    
+};
