@@ -1,0 +1,26 @@
+/**
+ * @param {string} s
+ * @param {string} t
+ * @return {character}
+ */
+var findTheDifference = function(s, t) {
+
+let pushArr = t.split('');
+let sourceArr = s.split('');
+
+ while(sourceArr.length>0) {
+     let index = sourceArr.indexOf(pushArr[0]); 	
+     if(index > -1)
+     {
+        sourceArr.splice(index,1);
+        pushArr.splice(0,1);
+     }
+     else
+        return pushArr[0].toString();
+ }
+ 
+ return pushArr.toString();
+
+
+   
+}
