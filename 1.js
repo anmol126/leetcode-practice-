@@ -1,0 +1,28 @@
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
+var twoSum = function(nums, target) {
+    
+    var objArr = [];
+     
+     nums.forEach(function(eachNum, index) {
+        objArr.push({index:index, value:eachNum});
+     });
+     
+     objArr.sort(function(a,b) {
+         return a.value-b.value; 
+     });
+     
+     for(let i=0, j=objArr.length-1; i<j;) {
+         
+         if(objArr[i].value+objArr[j].value>target)
+            j--;
+         else if(objArr[i].value+objArr[j].value<target)
+            i++;
+         else return [objArr[i].index, objArr[j].index];
+     }
+     
+     
+ };

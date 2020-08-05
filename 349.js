@@ -1,0 +1,22 @@
+/**
+ * @param {number[]} nums1
+ * @param {number[]} nums2
+ * @return {number[]}
+ */
+var intersection = function(nums1, nums2) {
+    
+
+    var pushArr = [];
+    
+    for(var i=0; i<nums2.length; i++) {
+    
+         if(nums1.indexOf(nums2[i])>-1) {
+             if(pushArr.indexOf(nums2[i])===-1)
+                 pushArr.push(nums2[i]);
+         }
+    
+    }
+    
+    return pushArr;
+       
+    }
