@@ -1,0 +1,33 @@
+/**
+ * @param {number[]} g
+ * @param {number[]} s
+ * @return {number}
+ */
+var findContentChildren = function(input, cookie) {
+    
+
+    input.sort(function(a,b) {
+        return b-a;
+    });
+    
+    cookie.sort(function(a,b) {
+        return b-a;
+    });
+    
+    let count=0;
+    
+    while(input.length>0) {
+        if(input[0]<=cookie[0]) {
+           input.splice(0,1);
+           cookie.splice(0,1);
+           count++;
+        }
+        else
+        {
+            input.splice(0,1);
+        }
+    }
+    
+    return count;
+        
+    };

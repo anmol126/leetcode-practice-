@@ -1,0 +1,32 @@
+/**
+ * @param {number[]} nums
+ * @return {string[]}
+ */
+var findRelativeRanks = function(input) {
+    
+    let i=0;
+    let pushArr = [];
+    while(i<input.length) { pushArr.push(input[i]);  i++; }
+    pushArr.sort(function(a,b) {  return b-a; });
+    i=0;
+    let pushArr2 = [];
+    
+    while(i<input.length) {
+      pushArr2.push(pushArr.indexOf(input[i])+1);
+      i++;
+    }
+    
+    for(let i=0; i<pushArr2.length; i++) {
+        if(pushArr2[i] === 1)
+            pushArr2[i] = "Gold Medal";
+        else if(pushArr2[i] === 2)
+            pushArr2[i] = "Silver Medal";
+       else if(pushArr2[i] === 3)
+            pushArr2[i] = "Bronze Medal";
+       else
+            pushArr2[i] = pushArr2[i].toString();
+    }
+    
+       return pushArr2;
+        
+    };
